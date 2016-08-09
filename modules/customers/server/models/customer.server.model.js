@@ -40,7 +40,7 @@ var CustomerSchema = new Schema({
   },
   dob: {
     type: Date,
-    default: '',
+    default: Date.now,
     trim: true
   },
   created: {
