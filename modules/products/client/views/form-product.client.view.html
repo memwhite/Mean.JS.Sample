@@ -1,0 +1,67 @@
+<section>
+  <div class="page-header">
+    <h1>{{vm.product._id ? 'Edit Product' : 'New Product'}}</h1>
+  </div>
+  <div class="col-md-12">
+    <form name="vm.form.productForm" class="form-horizontal" ng-submit="vm.save(vm.form.productForm.$valid)" novalidate>
+      <fieldset>
+        <!--Product name-->
+        <div class="form-group" show-errors>
+          <label class="control-label" for="name">Product Name</label>
+          <input name="name" type="text" ng-model="vm.product.name" id="name" class="form-control" placeholder="Product Name" required>
+          <div ng-messages="vm.form.productForm.name.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Product name is required.</p>
+          </div>
+        </div>
+        
+      <!--UPC Code-->
+        <div class="form-group" show-errors>
+          <label class="control-label" for="upcCode">UPC Code</label>
+          <input name="upcCode" type="text" ng-model="vm.product.upcCode" id="upcCode" class="form-control" placeholder="UPC Code" required>
+          <div ng-messages="vm.form.productForm.upcCode.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">UPC code is required.</p>
+          </div>
+        </div>
+        
+      <!--Product Description-->
+        <div class="form-group" show-errors>
+          <label class="control-label" for="productDesc">Product Description</label>
+          <input name="productDesc" type="text" ng-model="vm.product.productDesc" id="productDesc" class="form-control" placeholder="Product Description">
+          <div ng-messages="vm.form.productForm.productDesc.$error" role="alert">
+          </div>
+        </div>
+        
+      <!--Price-->
+         <div class="form-group" show-errors>
+          <label class="control-label" for="price">Price</label>
+          <input name="price" type="text" ng-model="vm.product.price" id="price" class="form-control" placeholder="Price">
+          <div ng-messages="vm.form.productForm.price.$error" role="alert">
+          </div>
+        </div>
+        
+      <!--Cost-->
+        <div class="form-group" show-errors>
+          <label class="control-label" for="cost">Cost</label>
+          <input name="cost" type="text" ng-model="vm.product.cost" id="cost" class="form-control" placeholder="Cost" required>
+          <div ng-messages="vm.form.productForm.cost.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Product cost is required.</p>
+          </div>
+        </div>
+       
+      <!--Department-->
+        <div class="form-group" show-errors>
+          <label class="control-label" for="department">Department</label>
+          <input name="department" type="text" ng-model="vm.product.department" id="department" class="form-control" placeholder="Department">
+          <div ng-messages="vm.form.productForm.department.$error" role="alert">
+          </div>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-default">{{vm.product._id ? 'Update' : 'Create'}}</button>
+        </div>
+        <div ng-show="vm.error" class="text-danger">
+          <strong ng-bind="vm.error"></strong>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</section>
