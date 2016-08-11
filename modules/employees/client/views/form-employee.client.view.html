@@ -8,7 +8,7 @@
          <!--First name-->
         <div class="form-group" show-errors>
           <label class="control-label" for="firstName">First Name</label>
-          <input name="firstName" type="text" ng-model="vm.employee.firstName" id="firstName" class="form-control" placeholder="First Name" required>
+          <input name="firstName" type="text" ng-model="vm.employee.firstName" id="firstName" class="form-control" placeholder="First Name" ng-required="true"/>
           <div ng-messages="vm.form.employeeForm.firstName.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Employee first name is required.</p>
           </div>
@@ -47,7 +47,17 @@
             <p class="help-block error-text" ng-message="required">Employee email is required.</p>
           </div>
         </div>
-       
+       <!--Dept works in-->
+        <div class="form-group" show-errors>
+          <label class="control-label" for="departmentIn">Department</label>
+          
+           <select name="departmentIn" type="text" ng-options="department.department as department.department for department in vm.products" ng-model="vm.employee.departmentIn" id="departmentIn" class="form-control" placeholder="Product" required>
+          </select>
+          
+          <div ng-messages="vm.form.employeeForm.departmentIn.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Employee department is required.</p>
+          </div>
+        </div>
       <!--Hire Date-->
         <div class="form-group" show-errors>
           <label class="control-label" for="hireDate">Hire Date</label>

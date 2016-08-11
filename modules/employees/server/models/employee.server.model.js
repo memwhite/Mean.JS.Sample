@@ -44,6 +44,11 @@ var EmployeeSchema = new Schema({
     required: 'Please fill Employee hire date',
     trim: true
   },
+  departmentIn: {
+    type: String,
+    default: '',
+    trim: true
+  },
   created: {
     type: Date,
     default: Date.now
